@@ -31,6 +31,11 @@ output "warehouse_id" {
   sensitive = false
 }
 
+output "warehouse_grant_id" {
+  value     = module.snowflake_cloud_warehouse_gramt.id
+  sensitive = false
+}
+
 output "role_id" {
   value     = module.snowflake_cloud_role.id
   sensitive = false

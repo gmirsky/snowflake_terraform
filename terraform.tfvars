@@ -1,4 +1,7 @@
 default_user_password = "Ch@ngeM3F1rstDoNotUseThisP@s$w0rd!"
+
+environment_namespace = "demo"
+
 users = {
   "terraform_test_user_1" = {
     login_name        = "terraform_test_user_1"
@@ -155,6 +158,14 @@ warehouse = {
     statement_timeout_in_seconds = null
     wait_for_provisioning        = true
     warehouse_size               = "X-Small"
+  }
+}
+
+warehouse_grant = {
+  "test_transformer_warehouse" = {
+    privilege         = "USAGE"
+    roles             = ["test_role_loader"]
+    with_grant_option = false
   }
 }
 

@@ -5,6 +5,13 @@ variable "warehouse_size_default" {
   sensitive   = false
 }
 
+variable "environment_namespace" {
+  type        = string
+  description = "Environment namespace (demo, test, qa, prod)"
+  default     = "demo"
+  sensitive   = false
+}
+
 variable "users" {
   type        = map(any)
   description = "User map used by the for_each loop in snowflake_cloud_user module"

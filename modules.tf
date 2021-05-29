@@ -8,6 +8,15 @@ module "snowflake_cloud_warehouse" {
   warehouse = var.warehouse
 }
 
+module "snowflake_cloud_warehouse_gramt" {
+  source          = "./snowflake_cloud_warehouse_grant"
+  warehouse_grant = var.warehouse_grant
+  depends_on = [
+    module.snowflake_cloud_warehouse,
+    module.snowflake_cloud_role
+  ]
+}
+
 module "snowflake_cloud_role" {
   source = "./snowflake_cloud_role"
   role   = var.role
