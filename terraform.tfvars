@@ -1,4 +1,4 @@
-default_user_password = "Ch@ngeM3F1rst!"
+default_user_password = "Ch@ngeM3F1rstDoNotUseThisP@s$w0rd!"
 users = {
   "terraform_test_user_1" = {
     login_name        = "terraform_test_user_1"
@@ -71,8 +71,30 @@ schema = {
     is_transient        = false
     data_retention_days = 1
   }
-
 }
+
+# schema_grant must be database.schema format
+schema_grant = {
+  "test_database_1.raw" = {
+    privilege         = "USAGE"
+    roles             = ["public"]
+    shares            = []
+    with_grant_option = false
+  }
+  "test_database_1.analytics" = {
+    privilege         = "USAGE"
+    roles             = ["public"]
+    shares            = []
+    with_grant_option = false
+  }
+  "test_database_1.reporting" = {
+    privilege         = "USAGE"
+    roles             = ["public"]
+    shares            = []
+    with_grant_option = false
+  }
+}
+
 role = {
   "test_role_loader" = {
     comment = "Owns the tables in the raw schema"
@@ -203,4 +225,3 @@ view = {
     sql_statement_path = "../sql/test_view_1.sql"
   }
 }
-#

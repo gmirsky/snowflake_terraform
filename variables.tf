@@ -28,7 +28,14 @@ variable "database_grant" {
 
 variable "schema" {
   type        = map(any)
-  description = "Schema map used by the for_each loop in snowflake_cloud_schema modfule"
+  description = "Schema map used by the for_each loop in snowflake_cloud_schema module"
+  default     = {}
+  sensitive   = false
+}
+
+variable "schema_grant" {
+  type        = map(any)
+  description = "Schema grants map used by the for_each loop in snowflake_cloud_schema_grants module"
   default     = {}
   sensitive   = false
 }
@@ -78,6 +85,5 @@ variable "view" {
 variable "default_user_password" {
   type        = string
   description = "Default user password"
-  default     = "ChangeMe1st!"
   sensitive   = true
 }

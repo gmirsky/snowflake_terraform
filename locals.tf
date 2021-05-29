@@ -1,2 +1,3 @@
-# locals {
-# }
+#locals {
+# local variables go here
+#}

@@ -40,6 +40,10 @@ output "schema_id" {
   value     = module.snowflake_cloud_schema.id
   sensitive = false
 }
+output "schema_grant_id" {
+  value     = module.snowflake_cloud_schema_grant.id
+  sensitive = false
+}
 
 output "database_grant_id" {
   value     = module.snowflake_cloud_database_grant.id
