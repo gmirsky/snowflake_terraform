@@ -49,3 +49,12 @@ module "snowflake_cloud_role_grants" {
     module.snowflake_cloud_user
   ]
 }
+
+module "snowflake_cloud_table" {
+  source = "./snowflake_cloud_table"
+  table  = var.table
+  depends_on = [
+    module.snowflake_cloud_database,
+    module.snowflake_cloud_schema
+  ]
+}

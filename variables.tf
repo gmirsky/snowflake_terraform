@@ -52,6 +52,12 @@ variable "warehouse_grant" {
   default     = {}
 }
 
+variable "table" {
+  type        = map(any)
+  description = "Table map used by the for_each loop in snowflake_cloud_table module"
+  default     = {}
+}
+
 variable "default_user_password" {
   type        = string
   description = "Default user password"

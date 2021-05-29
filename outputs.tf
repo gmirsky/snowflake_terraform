@@ -1,16 +1,19 @@
 output "snowflake_svc_public_key" {
-  value     = module.snowflake_cloud_user.snowflake_svc_public_key
-  sensitive = false
+  value       = module.snowflake_cloud_user.snowflake_svc_public_key
+  description = "The SVC public key"
+  sensitive   = false
 }
 
 output "snowflake_svc_public_key_openssh" {
-  value     = module.snowflake_cloud_user.snowflake_svc_public_key_openssh
-  sensitive = false
+  value       = module.snowflake_cloud_user.snowflake_svc_public_key_openssh
+  description = "The OpenSSH public key"
+  sensitive   = false
 }
 
 output "snowflake_svc_public_key_fingerprint_md5" {
-  value     = module.snowflake_cloud_user.snowflake_svc_public_key_fingerprint_md5
-  sensitive = false
+  value       = module.snowflake_cloud_user.snowflake_svc_public_key_fingerprint_md5
+  description = "The SVC public key MD5 finerprint"
+  sensitive   = false
 }
 
 output "snowflake_svc_private_key" {
@@ -45,5 +48,10 @@ output "database_grant_id" {
 
 output "role_grants_id" {
   value     = module.snowflake_cloud_role_grants.id
+  sensitive = false
+}
+
+output "table_id" {
+  value     = module.snowflake_cloud_table.id
   sensitive = false
 }

@@ -1,3 +1,4 @@
+default_user_password = "Ch@ngeM3F1rst!"
 users = {
   "terraform_test_user_1" = {
     login_name        = "terraform_test_user_1"
@@ -156,3 +157,40 @@ database_grant = {
     ]
   }
 }
+
+table = {
+  "test_table_1" = {
+    database   = "test_database_1"
+    schema     = "raw"
+    comment    = "A columnar test table called test_table_1"
+    cluster_by = ["to_date(DATE)"]
+    column = [
+      {
+        name = "id",
+        type = "int"
+      },
+      {
+        name = "data",
+        type = "text"
+      },
+      {
+        name = "DATE",
+        type = "TIMESTAMP_NTZ(9)"
+      }
+    ]
+  }
+  "test_table_2" = {
+    database   = "test_database_1"
+    schema     = "raw"
+    comment    = "A variant column test table called test_table_2"
+    cluster_by = []
+    column = [
+      {
+        name = "json_data",
+        type = "variant"
+      }
+    ]
+  }
+}
+
+#
