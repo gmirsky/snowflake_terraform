@@ -58,3 +58,14 @@ module "snowflake_cloud_table" {
     module.snowflake_cloud_schema
   ]
 }
+
+module "snowflake_cloud_view" {
+  source = "./snowflake_cloud_view"
+  view   = var.view
+  depends_on = [
+    module.snowflake_cloud_database,
+    module.snowflake_cloud_schema,
+    module.snowflake_cloud_table
+  ]
+}
+

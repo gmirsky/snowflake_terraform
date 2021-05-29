@@ -55,3 +55,8 @@ output "table_id" {
   value     = module.snowflake_cloud_table.id
   sensitive = false
 }
+
+output "view_id" {
+  value     = module.snowflake_cloud_view.id
+  sensitive = false
+}

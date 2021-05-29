@@ -193,4 +193,14 @@ table = {
   }
 }
 
+view = {
+  "test_view_1" = {
+    database           = "test_database_1"
+    schema             = "raw"
+    comment            = "A view based of a table called test_table_1"
+    or_replace         = true # Overwrites the View if it exists.
+    is_secure          = false
+    sql_statement_path = "../sql/test_view_1.sql"
+  }
+}
 #
