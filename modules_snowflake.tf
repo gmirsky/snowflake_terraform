@@ -77,6 +77,16 @@ module "snowflake_cloud_table" {
   ]
 }
 
+# module "snowflake_cloud_table_grant" {
+#   source      = "./snowflake_cloud_table_grant"
+#   table_grant = var.table_grant
+#   depends_on = [
+#     module.snowflake_cloud_database,
+#     module.snowflake_cloud_schema,
+#     module.snowflake_cloud_role
+#   ]
+# }
+
 # module "snowflake_cloud_view" {
 #   source = "./snowflake_cloud_view"
 #   view   = var.view
