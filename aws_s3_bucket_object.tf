@@ -3,6 +3,11 @@ resource "aws_s3_bucket_object" "snowflake_folder_csv" {
   bucket                 = module.s3-bucket.s3_bucket_id
   server_side_encryption = "AES256"
 }
+resource "aws_s3_bucket_object" "snowflake_folder_text" {
+  key                    = "${var.s3_bucket_folder_name}/text"
+  bucket                 = module.s3-bucket.s3_bucket_id
+  server_side_encryption = "AES256"
+}
 
 resource "aws_s3_bucket_object" "snowflake_folder_json" {
   key                    = "${var.s3_bucket_folder_name}/json"
@@ -16,5 +21,20 @@ resource "aws_s3_bucket_object" "snowflake_folder_parquet" {
   server_side_encryption = "AES256"
 }
 
+resource "aws_s3_bucket_object" "snowflake_folder_avro" {
+  key                    = "${var.s3_bucket_folder_name}/avro"
+  bucket                 = module.s3-bucket.s3_bucket_id
+  server_side_encryption = "AES256"
+}
 
+resource "aws_s3_bucket_object" "snowflake_folder_orc" {
+  key                    = "${var.s3_bucket_folder_name}/orc"
+  bucket                 = module.s3-bucket.s3_bucket_id
+  server_side_encryption = "AES256"
+}
 
+resource "aws_s3_bucket_object" "snowflake_folder_xml" {
+  key                    = "${var.s3_bucket_folder_name}/xml"
+  bucket                 = module.s3-bucket.s3_bucket_id
+  server_side_encryption = "AES256"
+}
