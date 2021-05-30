@@ -111,6 +111,13 @@ variable "table" {
   sensitive   = false
 }
 
+variable "table_grant" {
+  type        = map(any)
+  description = "Table grant map used by the for_each loop in snowflake_cloud_table_grant module"
+  default     = {}
+  sensitive   = false
+}
+
 variable "view" {
   type        = map(any)
   description = "View map used by the for_each loop in snowflake_cloud_view module"
@@ -118,19 +125,19 @@ variable "view" {
   sensitive   = false
 }
 
-variable "stage" {
-  type        = map(any)
-  description = "Stage map used by the for_each loop in snowflake_cloud_stage module"
-  default     = {}
-  sensitive   = false
-}
+# variable "stage" {
+#   type        = map(any)
+#   description = "Stage map used by the for_each loop in snowflake_cloud_stage module"
+#   default     = {}
+#   sensitive   = false
+# }
 
-variable "stage_grant" {
-  type        = map(any)
-  description = "Stage grant map used by the for_each loop in snowflake_cloud_stage_grant module"
-  default     = {}
-  sensitive   = false
-}
+# variable "stage_grant" {
+#   type        = map(any)
+#   description = "Stage grant map used by the for_each loop in snowflake_cloud_stage_grant module"
+#   default     = {}
+#   sensitive   = false
+# }
 
 variable "s3_bucket_folder_name" {
   type        = string
