@@ -65,11 +65,6 @@ output "table_id" {
   sensitive = false
 }
 
-output "view_id" {
-  value     = module.snowflake_cloud_view.id
-  sensitive = false
-}
-
 output "aws_account_id" {
   value     = data.aws_caller_identity.current.account_id
   sensitive = false
@@ -110,3 +105,12 @@ output "snowflake_user_aws_iam_access_secret_key_encrypted" {
   sensitive = false
 }
 
+# output "view_id" {
+#   value     = module.snowflake_cloud_view.id
+#   sensitive = false
+# }
+
+# output "table_grant_id" {
+#   value     = module.snowflake_cloud_table_grant.id
+#   sensitive = false
+# }
