@@ -1,1 +1,1 @@
-select * from test_database_1.raw.test_table_1;
+select * from raw.test_table_1;

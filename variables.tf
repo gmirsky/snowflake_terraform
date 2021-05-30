@@ -1,3 +1,17 @@
+variable "aws_region" {
+  type        = string
+  description = "AWS acccount region"
+  default     = "us-east-1"
+  sensitive   = false
+}
+
+variable "snowflake_region" {
+  type        = string
+  description = "Snowflake acccount region"
+  default     = "us-east-1"
+  sensitive   = false
+}
+
 variable "warehouse_size_default" {
   type        = string
   description = "Snowflake Warehouse size"
@@ -7,8 +21,23 @@ variable "warehouse_size_default" {
 
 variable "environment_namespace" {
   type        = string
-  description = "Environment namespace (demo, test, qa, prod)"
+  description = "Environment namespace (demo, dev, test, qa, prod)"
   default     = "demo"
+  sensitive   = false
+  validation {
+    condition = can(
+      regex(
+        "demo|dev|test|qa|prod",
+        var.environment_namespace
+      )
+    )
+    error_message = "ERROR: environment must be of type: dev, test, qa, prod."
+  }
+}
+
+variable "custom_tags" {
+  description = "Custom tags to be included"
+  type        = map(any)
   sensitive   = false
 }
 
@@ -89,8 +118,24 @@ variable "view" {
   sensitive   = false
 }
 
-variable "default_user_password" {
-  type        = string
-  description = "Default user password"
-  sensitive   = true
+variable "stage" {
+  type        = map(any)
+  description = "Stage map used by the for_each loop in snowflake_cloud_stage module"
+  default     = {}
+  sensitive   = false
 }
+
+variable "stage_grant" {
+  type        = map(any)
+  description = "Stage grant map used by the for_each loop in snowflake_cloud_stage_grant module"
+  default     = {}
+  sensitive   = false
+}
+
+variable "s3_bucket_folder_name" {
+  type        = string
+  description = "folder name that snowflake can access"
+  default     = "snowflake_data"
+  sensitive   = false
+}
+

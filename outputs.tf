@@ -32,7 +32,7 @@ output "warehouse_id" {
 }
 
 output "warehouse_grant_id" {
-  value     = module.snowflake_cloud_warehouse_gramt.id
+  value     = module.snowflake_cloud_warehouse_grant.id
   sensitive = false
 }
 
@@ -69,3 +69,44 @@ output "view_id" {
   value     = module.snowflake_cloud_view.id
   sensitive = false
 }
+
+output "aws_account_id" {
+  value     = data.aws_caller_identity.current.account_id
+  sensitive = false
+}
+
+output "aws_caller_arn" {
+  value     = data.aws_caller_identity.current.arn
+  sensitive = false
+}
+
+output "aws_caller_user" {
+  value     = data.aws_caller_identity.current.user_id
+  sensitive = false
+}
+
+output "snowflake_user" {
+  value     = aws_iam_user.snowflake_user.name
+  sensitive = false
+}
+
+output "snowflake_user_arn" {
+  value     = aws_iam_user.snowflake_user.arn
+  sensitive = false
+}
+
+output "snowflake_user_aws_iam_access_key" {
+  value     = aws_iam_access_key.snowflake_user.id
+  sensitive = false
+}
+
+output "snowflake_user_aws_iam_access_secret_key" {
+  value     = aws_iam_access_key.snowflake_user.secret
+  sensitive = true
+}
+
+output "snowflake_user_aws_iam_access_secret_key_encrypted" {
+  value     = aws_iam_access_key.snowflake_user.encrypted_secret
+  sensitive = false
+}
+

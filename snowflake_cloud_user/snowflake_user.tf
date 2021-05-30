@@ -2,7 +2,7 @@ resource "snowflake_user" "user" {
   for_each             = var.users
   name                 = each.key
   login_name           = each.value.login_name
-  password             = var.default_user_password
+  password             = random_password.password.result
   must_change_password = true
   comment              = each.value.comment
   disabled             = each.value.disabled

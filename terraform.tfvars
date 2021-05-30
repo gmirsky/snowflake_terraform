@@ -1,6 +1,9 @@
-default_user_password = "Ch@ngeM3F1rstDoNotUseThisP@s$w0rd!"
-
 environment_namespace = "demo"
+
+custom_tags = {
+  Project = "Snowflake"
+  Role    = "Snowflake cloud evaluation and testing"
+}
 
 users = {
   "terraform_test_user_1" = {
@@ -80,19 +83,19 @@ schema = {
 schema_grant = {
   "test_database_1.raw" = {
     privilege         = "USAGE"
-    roles             = ["public"]
+    roles             = ["test_role_reports"]
     shares            = []
     with_grant_option = false
   }
   "test_database_1.analytics" = {
     privilege         = "USAGE"
-    roles             = ["public"]
+    roles             = ["test_role_reports"]
     shares            = []
     with_grant_option = false
   }
   "test_database_1.reporting" = {
     privilege         = "USAGE"
-    roles             = ["public"]
+    roles             = ["test_role_loader"]
     shares            = []
     with_grant_option = false
   }

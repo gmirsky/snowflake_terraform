@@ -8,7 +8,7 @@ module "snowflake_cloud_warehouse" {
   warehouse = var.warehouse
 }
 
-module "snowflake_cloud_warehouse_gramt" {
+module "snowflake_cloud_warehouse_grant" {
   source          = "./snowflake_cloud_warehouse_grant"
   warehouse_grant = var.warehouse_grant
   depends_on = [
@@ -23,9 +23,8 @@ module "snowflake_cloud_role" {
 }
 
 module "snowflake_cloud_user" {
-  source                = "./snowflake_cloud_user"
-  users                 = var.users
-  default_user_password = var.default_user_password
+  source = "./snowflake_cloud_user"
+  users  = var.users
   depends_on = [
     module.snowflake_cloud_role,
     module.snowflake_cloud_warehouse
@@ -78,12 +77,12 @@ module "snowflake_cloud_table" {
   ]
 }
 
-module "snowflake_cloud_view" {
-  source = "./snowflake_cloud_view"
-  view   = var.view
-  depends_on = [
-    module.snowflake_cloud_database,
-    module.snowflake_cloud_schema,
-    module.snowflake_cloud_table
-  ]
-}
+# module "snowflake_cloud_view" {
+#   source = "./snowflake_cloud_view"
+#   view   = var.view
+#   depends_on = [
+#     module.snowflake_cloud_database,
+#     module.snowflake_cloud_schema,
+#     module.snowflake_cloud_table
+#   ]
+# }

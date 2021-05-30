@@ -8,6 +8,6 @@ variable "users" {
 variable "default_user_password" {
   type        = string
   description = "Default user password"
-  default     = "ChangeMe1st!"
+  default     = ""
   sensitive   = true
 }
