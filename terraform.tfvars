@@ -229,6 +229,32 @@ table = {
   }
 }
 
+table_grant = {
+  "test_database_1.raw.test_table_1" = {
+    privilege = "SELECT"
+    roles = [
+      "test_role_loader",
+      "test_role_transformer",
+      "test_role_reports"
+    ]
+    shares            = []
+    on_future         = false
+    with_grant_option = false
+  }
+  "test_database_1.raw.test_table_2" = {
+    privilege = "SELECT"
+    roles = [
+      "test_role_loader",
+      "test_role_transformer",
+      "test_role_reports"
+    ]
+    shares            = []
+    on_future         = false
+    with_grant_option = false
+  }
+
+}
+
 view = {
   "test_view_1" = {
     database           = "test_database_1"
