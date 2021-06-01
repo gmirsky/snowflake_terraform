@@ -78,6 +78,31 @@ module "snowflake_cloud_table" {
   ]
 }
 
+module "snowflake_cloud_stage" {
+  source            = "./snowflake_cloud_stage"
+  stage_s3_url      = local.stage_s3_url
+  stage_database    = var.stage_database
+  stage_schema      = var.stage_schema
+  stage_credentials = local.snowflake_s3_user_credentials
+  depends_on = [
+    module.snowflake_cloud_database,
+    module.snowflake_cloud_schema,
+    aws_s3_bucket_object.snowflake_folders,
+    aws_iam_access_key.snowflake_user
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
 # module "snowflake_cloud_table_grant" {
 #   source      = "./snowflake_cloud_table_grant"
 #   #count = 0
@@ -117,8 +142,6 @@ module "snowflake_cloud_table" {
 # │   91: resource "snowflake_table_grant" "grant" {
 # │
 # ╵
-
-
 
 
 # module "snowflake_cloud_view" {

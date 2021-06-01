@@ -4,4 +4,5 @@ locals {
   #
   s3_bucket_folder_name         = toset(var.s3_bucket_folder_name)
   snowflake_s3_user_credentials = "AWS_KEY_ID='${aws_iam_access_key.snowflake_user.id}' AWS_SECRET_KEY='${aws_iam_access_key.snowflake_user.secret}'"
+  stage_s3_url                  = { for k, v in aws_s3_bucket_object.snowflake_folders : k => "s3://${local.snowflake_s3_bucket_name}/${v.key}" }
 }

@@ -276,3 +276,7 @@ s3_bucket_folder_name = [
   "snowflake_test_data/orc/",
   "snowflake_test_data/xml/"
 ]
+
+stage_database = "test_database_1"
+
+stage_schema = "raw"

@@ -1,7 +1,17 @@
-# resource "snowflake_stage" "stage" {
-#   name        = "EXAMPLE_STAGE"
-#   url         = "s3://com.example.bucket/prefix"
-#   database    = "EXAMPLE_DB"
-#   schema      = "EXAMPLE_SCHEMA"
-#   credentials = "AWS_KEY_ID='${var.example_aws_key_id}' AWS_SECRET_KEY='${var.example_aws_secret_key}'"
-# }
+resource "snowflake_stage" "stage" {
+  for_each = var.stage_s3_url
+  name = trimsuffix(
+    replace(
+      replace(
+        each.key
+      , "-", "_")
+    , "/", "_")
+  , "_")
+  url         = each.value
+  database    = var.stage_database
+  schema      = var.stage_schema
+  credentials = var.stage_credentials
+  comment = "Stage created by Terraform"
+}
+
+#"s3://snowflake-demo-724478533141/snowflake_test_data/csv/

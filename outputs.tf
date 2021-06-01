@@ -114,3 +114,24 @@ output "snowflake_user_aws_iam_access_secret_key_encrypted" {
 #   value     = module.snowflake_cloud_table_grant.id
 #   sensitive = false
 # }
+
+output "stage_s3_url" {
+  value     = local.stage_s3_url
+  sensitive = false
+}
+
+output "snowflake_cloud_stage_id" {
+  value     = module.snowflake_cloud_stage.id
+  sensitive = false
+}
+
+output "snowflake_cloud_stage_name" {
+  value     = module.snowflake_cloud_stage.name
+  sensitive = false
+}
+
+output "snowflake_cloud_stage_url" {
+  value     = module.snowflake_cloud_stage.url
+  sensitive = false
+}
+

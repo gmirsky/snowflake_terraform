@@ -1,4 +1,4 @@
-resource "aws_s3_bucket_object" "snowflake_folder_csv" {
+resource "aws_s3_bucket_object" "snowflake_folders" {
   for_each               = local.s3_bucket_folder_name
   key                    = each.key
   bucket                 = module.s3-bucket.s3_bucket_id
