@@ -6,6 +6,7 @@ module "snowflake_cloud_database" {
 module "snowflake_cloud_warehouse" {
   source    = "./snowflake_cloud_warehouse"
   warehouse = var.warehouse
+  snowflake_account_type = var.snowflake_account_type
 }
 
 module "snowflake_cloud_warehouse_grant" {
