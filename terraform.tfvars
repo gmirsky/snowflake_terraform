@@ -82,6 +82,7 @@ schema = {
 }
 
 # schema_grant must be database.schema format
+# the module will separate the database and schema 
 schema_grant = {
   "test_database_1.raw" = {
     privilege         = "USAGE"
@@ -220,7 +221,7 @@ table = {
   "test_table_2" = {
     database   = "test_database_1"
     schema     = "raw"
-    comment    = "A variant column test table called test_table_2"
+    comment    = "A variant column test table called test_table_2 to load JSON data"
     cluster_by = []
     column = [
       {
@@ -229,6 +230,19 @@ table = {
       }
     ]
   }
+  "test_table_3" = {
+    database   = "test_database_1"
+    schema     = "raw"
+    comment    = "A variant column test table called test_table_3 to load parquet data"
+    cluster_by = []
+    column = [
+      {
+        name = "parquet_data",
+        type = "variant"
+      }
+    ]
+  }
+
 }
 
 table_grant = {
