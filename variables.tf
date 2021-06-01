@@ -156,9 +156,9 @@ variable "view" {
 # }
 
 variable "s3_bucket_folder_name" {
-  type        = string
-  description = "folder name that snowflake can access"
-  default     = "snowflake_data"
+  type        = list(string)
+  description = "folders name(s) to create so that snowflake can access"
+  default     = []
   sensitive   = false
 }
 

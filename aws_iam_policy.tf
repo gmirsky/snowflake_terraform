@@ -16,20 +16,13 @@ resource "aws_iam_policy" "snowflake_user" {
             "s3:DeleteObjectVersion"
           ],
           "Resource" : [
-            "arn:aws:s3:::${local.snowflake_s3_bucket_name}/${var.s3_bucket_folder_name}/*"
+            "arn:aws:s3:::${local.snowflake_s3_bucket_name}/*"
           ]
         },
         {
           "Effect" : "Allow",
           "Action" : "s3:ListBucket",
-          "Resource" : "arn:aws:s3:::${local.snowflake_s3_bucket_name}",
-          "Condition" : {
-            "StringLike" : {
-              "s3:prefix" : [
-                "${var.s3_bucket_folder_name}/*"
-              ]
-            }
-          }
+          "Resource" : "arn:aws:s3:::${local.snowflake_s3_bucket_name}"
         }
       ]
     }

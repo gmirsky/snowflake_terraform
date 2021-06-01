@@ -254,7 +254,6 @@ table_grant = {
     on_future         = false
     with_grant_option = false
   }
-
 }
 
 view = {
@@ -267,3 +266,13 @@ view = {
     sql_statement_path = "../sql/test_view_1.sql"
   }
 }
+
+s3_bucket_folder_name = [
+  "snowflake_test_data/csv/",
+  "snowflake_test_data/text/",
+  "snowflake_test_data/json/",
+  "snowflake_test_data/parquet/",
+  "snowflake_test_data/avro/",
+  "snowflake_test_data/orc/",
+  "snowflake_test_data/xml/"
+]
