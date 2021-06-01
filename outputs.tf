@@ -110,7 +110,7 @@ output "snowflake_user_aws_iam_access_secret_key_encrypted" {
 #   sensitive = false
 # }
 
-output "table_grant_id" {
-  value     = module.snowflake_cloud_table_grant.id
-  sensitive = false
-}
+# output "table_grant_id" {
+#   value     = module.snowflake_cloud_table_grant.id
+#   sensitive = false
+# }
