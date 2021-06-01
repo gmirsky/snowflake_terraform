@@ -8,7 +8,7 @@ resource "snowflake_warehouse" "warehouse" {
   min_cluster_count            = each.value.min_cluster_count
   name                         = each.key
   resource_monitor             = each.value.resource_monitor
-  scaling_policy               = each.value.scaling_policy
+  scaling_policy               = var.snowflake_account_type != "standard" ? each.value.scaling_policy : null
   statement_timeout_in_seconds = each.value.statement_timeout_in_seconds
   #wait_for_provisioning        = each.value.wait_for_provisioning
   warehouse_size = each.value.warehouse_size
