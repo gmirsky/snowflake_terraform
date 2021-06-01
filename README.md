@@ -1,7 +1,3 @@
-
-
-
-
 # Snowflake Terraform
 
 ## Description
@@ -21,6 +17,7 @@ You must alter your Snowflake user with the following command via the console be
 ```sql
 ALTER USER my_terraform_account_admin_user_id SET QUOTED_IDENTIFIERS_IGNORE_CASE = true;
 ```
+
 ## Run Instructions
 
 ```bash
