@@ -198,10 +198,10 @@ database_grant = {
 }
 
 table = {
-  "test_table_1" = {
+  "snowflake_test_table_csv" = {
     database   = "test_database_1"
     schema     = "raw"
-    comment    = "A columnar test table called test_table_1"
+    comment    = "A columnar test table called snowflake_test_table_csv to load CSV data"
     cluster_by = ["to_date(DATE)"]
     column = [
       {
@@ -218,10 +218,10 @@ table = {
       }
     ]
   }
-  "test_table_2" = {
+  "snowflake_test_table_json" = {
     database   = "test_database_1"
     schema     = "raw"
-    comment    = "A variant column test table called test_table_2 to load JSON data"
+    comment    = "A variant column test table called snowflake_test_table_json to load JSON data"
     cluster_by = []
     column = [
       {
@@ -230,10 +230,10 @@ table = {
       }
     ]
   }
-  "test_table_3" = {
+  "snowflake_test_table_parquet" = {
     database   = "test_database_1"
     schema     = "raw"
-    comment    = "A variant column test table called test_table_3 to load parquet data"
+    comment    = "A variant column test table called snowflake_test_table_parquet to load parquet data"
     cluster_by = []
     column = [
       {
@@ -242,11 +242,55 @@ table = {
       }
     ]
   }
+  "snowflake_test_table_avro" = {
+    database   = "test_database_1"
+    schema     = "raw"
+    comment    = "A variant column test table called snowflake_test_table_avro to load Apache Avro data"
+    cluster_by = []
+    column = [
+      {
+        name = "avro_data",
+        type = "variant"
+      }
+    ]
+  }
+"snowflake_test_table_xml" = {
+    database   = "test_database_1"
+    schema     = "raw"
+    comment    = "A variant column test table called snowflake_test_table_xml to load xml data"
+    cluster_by = []
+    column = [
+      {
+        name = "xml_data",
+        type = "variant"
+      }
+    ]
+  }
+"snowflake_test_table_orc" = {
+    database   = "test_database_1"
+    schema     = "raw"
+    comment    = "A variant column test table called snowflake_test_table_orc to load Optimized Row Columnar (orc) data"
+    cluster_by = []
+    column = [
+      {
+        name = "id",
+        type = "int"
+      },
+      {
+        name = "product_description",
+        type = "text"
+      },
+      {
+        name = "product_sku",
+        type = "text"
+      }
+    ]
+  }
 
 }
 
 table_grant = {
-  "test_database_1.raw.test_table_1" = {
+  "test_database_1.raw.snowflake_test_table_csv" = {
     privilege = "SELECT"
     roles = [
       "test_role_loader",
@@ -257,7 +301,7 @@ table_grant = {
     on_future         = false
     with_grant_option = false
   }
-  "test_database_1.raw.test_table_2" = {
+  "test_database_1.raw.snowflake_test_table_json" = {
     privilege = "SELECT"
     roles = [
       "test_role_loader",
@@ -274,7 +318,7 @@ view = {
   "test_view_1" = {
     database           = "test_database_1"
     schema             = "raw"
-    comment            = "A view based of a table called test_table_1"
+    comment            = "A view based of a table called snowflake_test_table_csv"
     or_replace         = true # Overwrites the View if it exists.
     is_secure          = false
     sql_statement_path = "../sql/test_view_1.sql"

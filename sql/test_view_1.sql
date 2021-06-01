@@ -1,1 +1,1 @@
-select * from raw.test_table_1;
+select * from raw.snowflake_test_table_csv;

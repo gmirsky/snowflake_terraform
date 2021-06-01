@@ -116,7 +116,7 @@ module "snowflake_cloud_stage" {
 
 # resource "snowflake_table_grant" "grant" {
 #   database_name = "test_database_1"
-#   #id                = "test_database_1|raw|test_table_1|SELECT|false"
+#   #id                = "test_database_1|raw|snowflake_test_table_csv|SELECT|false"
 #   #on_future = false
 #   privilege = "SELECT"
 #   roles = [
@@ -124,7 +124,7 @@ module "snowflake_cloud_stage" {
 #   ]
 #   schema_name       = "raw"
 #   shares            = []
-#   table_name        = "test_table_1"
+#   table_name        = "snowflake_test_table_csv"
 #   with_grant_option = false
 #   depends_on = [
 #     module.snowflake_cloud_database,
@@ -135,7 +135,7 @@ module "snowflake_cloud_stage" {
 
 #   ╷
 # │ Error: 002003 (42S02): SQL compilation error:
-# │ Table 'TEST_DATABASE_1.RAW.TEST_TABLE_1' does not exist or not authorized.
+# │ Table 'TEST_DATABASE_1.RAW.snowflake_test_table_csv' does not exist or not authorized.
 # │
 # │   with snowflake_table_grant.grant,
 # │   on modules_snowflake.tf line 91, in resource "snowflake_table_grant" "grant":
