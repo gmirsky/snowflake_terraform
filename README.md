@@ -6,6 +6,13 @@ This is currently a work in progress. Do not use!
 
 Tested with Terraform version 15.4
 
+You must alter your Snowflake user with the following command via the console before trying to use this Terraform scrpit
+
+```sql
+ALTER USER my_terraform_account_admin_user_id SET QUOTED_IDENTIFIERS_IGNORE_CASE = true;
+```
+
+
 ```bash
 terraform init
 

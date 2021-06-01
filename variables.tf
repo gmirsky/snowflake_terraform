@@ -20,10 +20,10 @@ variable "warehouse_size_default" {
 }
 
 variable "snowflake_account_type" {
-  type = string
-  default = "standard"
+  type        = string
+  default     = "standard"
   description = "Snowflake account type (standard, enterprise, business_critical, vps)"
-  sensitive = false 
+  sensitive   = false
   validation {
     condition = can(
       regex(
