@@ -19,6 +19,22 @@ variable "warehouse_size_default" {
   sensitive   = false
 }
 
+variable "snowflake_account_type" {
+  type = string
+  default = "standard"
+  description = "Snowflake account type (standard, enterprise, business_critical, vps)"
+  sensitive = false 
+  validation {
+    condition = can(
+      regex(
+        "standard|enterprise|business_critical|vps",
+        var.snowflake_account_type
+      )
+    )
+    error_message = "ERROR: Snowflake account type must be of type: standard, enterprise, business_critical, vps."
+  }
+}
+
 variable "environment_namespace" {
   type        = string
   description = "Environment namespace (demo, dev, test, qa, prod)"

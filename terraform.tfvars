@@ -1,3 +1,5 @@
+snowflake_account_type = "standard"
+
 environment_namespace = "demo"
 
 custom_tags = {
