@@ -1,4 +1,4 @@
-variable "stage_s3_url" {
+variable "stage_s3_urls" {
   type        = map(any)
   description = "S3 full bucket and folders map used by the for_each loop in snowflake_stage"
   default     = {}

@@ -115,8 +115,8 @@ output "snowflake_user_aws_iam_access_secret_key_encrypted" {
 #   sensitive = false
 # }
 
-output "stage_s3_url" {
-  value     = local.stage_s3_url
+output "stage_s3_urls" {
+  value     = local.stage_s3_urls
   sensitive = false
 }
 

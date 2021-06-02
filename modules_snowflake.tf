@@ -80,7 +80,7 @@ module "snowflake_cloud_table" {
 
 module "snowflake_cloud_stage" {
   source            = "./snowflake_cloud_stage"
-  stage_s3_url      = local.stage_s3_url
+  stage_s3_urls      = local.stage_s3_urls
   stage_database    = var.stage_database
   stage_schema      = var.stage_schema
   stage_credentials = local.snowflake_s3_user_credentials

@@ -1,5 +1,5 @@
 resource "snowflake_stage" "stage" {
-  for_each = var.stage_s3_url
+  for_each = var.stage_s3_urls
   name = trimsuffix(
     replace(
       replace(
