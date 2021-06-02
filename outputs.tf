@@ -135,3 +135,17 @@ output "snowflake_cloud_stage_url" {
   sensitive = false
 }
 
+output "snowflake_cloud_pipe_id" {
+  value     = module.snowflake_cloud_pipe.id
+  sensitive = false
+}
+
+output "snowflake_cloud_pipe_sqs_notification_channel" {
+  value     = module.snowflake_cloud_pipe.sqs_notification_channel
+  sensitive = false
+}
+
+output "snowflake_cloud_pipe_pipe_owner" {
+  value     = module.snowflake_cloud_pipe.pipe_owner
+  sensitive = false
+}

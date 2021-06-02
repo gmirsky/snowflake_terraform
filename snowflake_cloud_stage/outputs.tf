@@ -5,13 +5,13 @@ output "id" {
 }
 
 output "name" {
- value = {
+  value = {
     for k, v in snowflake_stage.stage : k => v.name
   }
 }
 
 output "url" {
- value = {
+  value = {
     for k, v in snowflake_stage.stage : k => v.url
   }
 }

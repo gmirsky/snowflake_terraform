@@ -175,3 +175,44 @@ variable "stage_schema" {
   default     = ""
   sensitive   = false
 }
+
+variable "pipe" {
+  type        = map(any)
+  description = "Pipe map used by the for_each loop in snowflake_cloud_pipe module"
+  default     = {}
+  sensitive   = false
+}
+
+variable "snowflake_resource_monitor_credit_quota" {
+  type        = number
+  description = "Snowflake resource monitor credit quota (default = 5)"
+  default     = 5
+  sensitive   = false
+}
+
+variable "snowflake_resource_monitor_frequency" {
+  type        = string
+  description = "Snowflake resource monitor frequency (default = DAILY)"
+  default     = "DAILY"
+  sensitive   = false
+}
+
+variable "snowflake_resource_monitor_notify_triggers" {
+  type        = list(number)
+  description = "Snowflake resource monitor notify trigger thresholds"
+  default     = [85, 90, 95]
+}
+
+variable "snowflake_resource_monitor_suspend_triggers" {
+  type        = list(number)
+  description = "Snowflake resource monitor suspend trigger thresholds"
+  default     = [100]
+}
+
+variable "snowflake_resource_monitor_suspend_immediate_triggers" {
+  type        = list(number)
+  description = "Snowflake resource monitor suspend immediate trigger thresholds"
+  default     = [101, 105, 110]
+}
+
+

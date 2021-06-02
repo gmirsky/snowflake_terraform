@@ -11,7 +11,5 @@ resource "snowflake_stage" "stage" {
   database    = var.stage_database
   schema      = var.stage_schema
   credentials = var.stage_credentials
-  comment = "Stage created by Terraform"
+  comment     = "Stage created by Terraform"
 }
-
-#"s3://snowflake-demo-724478533141/snowflake_test_data/csv/

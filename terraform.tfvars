@@ -2,6 +2,16 @@ snowflake_account_type = "standard"
 
 environment_namespace = "demo"
 
+snowflake_resource_monitor_credit_quota = 5
+
+snowflake_resource_monitor_frequency = "DAILY"
+
+snowflake_resource_monitor_notify_triggers = [85, 90, 95]
+
+snowflake_resource_monitor_suspend_triggers = [100]
+
+snowflake_resource_monitor_suspend_immediate_triggers = [110]
+
 custom_tags = {
   Project = "Snowflake"
   Role    = "Snowflake cloud evaluation and testing"
@@ -254,7 +264,7 @@ table = {
       }
     ]
   }
-"snowflake_test_table_xml" = {
+  "snowflake_test_table_xml" = {
     database   = "test_database_1"
     schema     = "raw"
     comment    = "A variant column test table called snowflake_test_table_xml to load xml data"
@@ -266,7 +276,7 @@ table = {
       }
     ]
   }
-"snowflake_test_table_orc" = {
+  "snowflake_test_table_orc" = {
     database   = "test_database_1"
     schema     = "raw"
     comment    = "A variant column test table called snowflake_test_table_orc to load Optimized Row Columnar (orc) data"
@@ -319,7 +329,7 @@ view = {
     database           = "test_database_1"
     schema             = "raw"
     comment            = "A view based of a table called snowflake_test_table_csv"
-    or_replace         = true # Overwrites the View if it exists.
+    or_replace         = true # Overwrites the view if it exists.
     is_secure          = false
     sql_statement_path = "../sql/test_view_1.sql"
   }
@@ -327,7 +337,6 @@ view = {
 
 s3_bucket_folder_name = [
   "snowflake_test_data/csv/",
-  "snowflake_test_data/text/",
   "snowflake_test_data/json/",
   "snowflake_test_data/parquet/",
   "snowflake_test_data/avro/",
@@ -338,3 +347,41 @@ s3_bucket_folder_name = [
 stage_database = "test_database_1"
 
 stage_schema = "raw"
+
+# pipe must be database.schema.table_name (fully qualified table name) format!
+pipe = {
+  "test_database_1.raw.snowflake_test_table_csv" = {
+    stage_name       = "snowflake_test_data_csv"
+    auto_ingest      = true
+    file_format_type = "CSV"
+  }
+  "test_database_1.raw.snowflake_test_table_json" = {
+    stage_name       = "snowflake_test_data_json"
+    auto_ingest      = true
+    file_format_type = "JSON"
+  }
+  "test_database_1.raw.snowflake_test_table_avro" = {
+    stage_name       = "snowflake_test_data_avro"
+    auto_ingest      = true
+    file_format_type = "AVRO"
+  }
+  "test_database_1.raw.snowflake_test_table_parquet" = {
+    stage_name       = "snowflake_test_data_parquet"
+    auto_ingest      = true
+    file_format_type = "PARQUET"
+  }
+  "test_database_1.raw.snowflake_test_table_xml" = {
+    stage_name       = "snowflake_test_data_xml"
+    auto_ingest      = true
+    file_format_type = "XML"
+  }
+}
+
+# snowflake_cloud_stage_name = {
+#   "snowflake_test_data/avro/" = "snowflake_test_data_avro"
+#   "snowflake_test_data/csv/" = "snowflake_test_data_csv"
+#   "snowflake_test_data/json/" = "snowflake_test_data_json"
+#   "snowflake_test_data/orc/" = "snowflake_test_data_orc"
+#   "snowflake_test_data/parquet/" = "snowflake_test_data_parquet"
+#   "snowflake_test_data/text/" = "snowflake_test_data_text"
+#   "snowflake_test_data/xml/" = "snowflake_test_data_xml"
