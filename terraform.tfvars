@@ -200,6 +200,8 @@ database_grant = {
     shares            = []
     with_grant_option = false
     roles = [
+      "SYSADMIN",
+      "SECURITYADMIN",
       "test_role_loader",
       "test_role_transformer",
       "test_role_reports"
@@ -376,12 +378,3 @@ pipe = {
     file_format_type = "XML"
   }
 }
-
-# snowflake_cloud_stage_name = {
-#   "snowflake_test_data/avro/" = "snowflake_test_data_avro"
-#   "snowflake_test_data/csv/" = "snowflake_test_data_csv"
-#   "snowflake_test_data/json/" = "snowflake_test_data_json"
-#   "snowflake_test_data/orc/" = "snowflake_test_data_orc"
-#   "snowflake_test_data/parquet/" = "snowflake_test_data_parquet"
-#   "snowflake_test_data/text/" = "snowflake_test_data_text"
-#   "snowflake_test_data/xml/" = "snowflake_test_data_xml"
