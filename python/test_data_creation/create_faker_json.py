@@ -17,13 +17,13 @@ def fake_person_generator(occurances, fake):
                'credit_card_security_code': fake.credit_card_security_code(),
                'credit_card_expire': fake.credit_card_expire(),
                'ipv4_private': fake.ipv4_private(),
-               'email': fake.email(),
+               #'email': fake.email(),
                'index': x}
 
 
 database = []
-filename = 'snowflake_test_data'
-occurances = 1000
+filename = 'snowflake_test_table_data'
+occurances = 10000
 fake = Faker('en_US')
 fake.add_provider(internet)
 fpg = fake_person_generator(occurances, fake)
