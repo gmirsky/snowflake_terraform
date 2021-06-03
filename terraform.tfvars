@@ -221,14 +221,6 @@ table = {
         type = "text"
       },
       {
-        name = "product_id",
-        type = "text"
-      },
-      {
-        name = "quantity"
-        type = "number"
-      },
-      {
         name = "country_code",
         type = "text"
       }
