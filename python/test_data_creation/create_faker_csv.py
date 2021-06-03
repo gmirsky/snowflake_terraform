@@ -19,8 +19,8 @@ def create_csv_file():
             #'first_name',
             #'last_name',
             'email',
-            'product_id',
-            'qty',
+            #'product_id',
+            #'qty',
             #'amount',
             #'description',
             'country_code'
@@ -34,8 +34,8 @@ def create_csv_file():
                     #'first_name': fake.first_name(),
                     #'last_name': fake.last_name(),
                     'email': fake.email(),
-                    'product_id': fake.random_int(min=100, max=999),
-                    'qty': fake.random_int(min=1, max=99),
+                    #'product_id': fake.random_int(min=100, max=999),
+                    #'qty': fake.random_int(min=1, max=99),
                     #'amount': float(Decimal(random.randrange(500, 10000))/100),
                     #'description': fake.sentence(nb_words=5),
                     'country_code': fake.country_code(representation='alpha-3')
