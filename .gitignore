@@ -33,5 +33,3 @@ override.tf.json
 notes.txt
 
 .terraform.lock.hcl
-
-provider.tf
