@@ -214,19 +214,23 @@ table = {
     database   = "test_database_1"
     schema     = "raw"
     comment    = "A columnar test table called snowflake_test_table_csv to load CSV data"
-    cluster_by = ["to_date(DATE)"]
+    cluster_by = ["country_code"]
     column = [
       {
-        name = "id",
-        type = "int"
-      },
-      {
-        name = "data",
+        name = "email",
         type = "text"
       },
       {
-        name = "DATE",
-        type = "TIMESTAMP_NTZ(9)"
+        name = "product_id",
+        type = "text"
+      },
+      {
+        name = "quantity"
+        type = "number"
+      },
+      {
+        name = "country_code",
+        type = "text"
       }
     ]
   }
