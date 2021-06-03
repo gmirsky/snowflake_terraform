@@ -33,3 +33,6 @@ override.tf.json
 notes.txt
 
 .terraform.lock.hcl
+
+python/test_data_creation/snowflake_test_table_data.csv
+python/test_data_creation/snowflake_test_table_data.json
