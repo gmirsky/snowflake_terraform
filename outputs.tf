@@ -149,3 +149,8 @@ output "snowflake_cloud_pipe_pipe_owner" {
   value     = module.snowflake_cloud_pipe.pipe_owner
   sensitive = false
 }
+
+output "s3_bucket_arn" {
+  value     = module.s3-bucket.s3_bucket_arn
+  sensitive = false
+}
