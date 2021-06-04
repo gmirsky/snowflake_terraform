@@ -67,6 +67,7 @@ users = {
     warehouse         = "test_loader_warehouse"
   }
 }
+
 schema = {
   "raw" = {
     database            = "test_database_1"
