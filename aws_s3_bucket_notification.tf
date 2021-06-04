@@ -7,7 +7,7 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
       queue_arn     = queue.value
       events        = ["s3:ObjectCreated:*"]
       filter_prefix = "snowflake_test_data/${lower(one(regex("([^_]+$)", queue.key)))}/"
-      filter_suffix = ".${lower(one(regex("([^_]+$)", queue.key)))}"
+      filter_suffix = ".${lower(one(regex("([^_]+$)", queue.key)))}" #example:  .csv, .parquet, .json, etc.
     }
   }
 }
