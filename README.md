@@ -1,12 +1,12 @@
 # Snowflake AWS Terraform
 
-## Warning!
+## Warning
 
 This is still a work in progress. Do not use.
 
 ## Description
 
-Terraform scripts and modules to provision a databases, schemas, tables, warehouses, roles, resource monitor, stages and pipes in Snowflake Cloud. The Terraform scripts will also provision a AWS S3 bucket for data loading and the user and permissions Snowflake will use to connect to the account. 
+Terraform scripts and modules to provision a databases, schemas, tables, warehouses, roles, resource monitor, stages and pipes in Snowflake Cloud. The Terraform scripts will also provision a AWS S3 bucket for data loading and the user and permissions Snowflake will use to connect to the account.
 
 The Terraform modules are genericized to use multi-level map variables to provision the Snowflake assets. Below is a sample of the terraform.tfvars that provions four test users and assigns them to a default role and data warehouse.
 
@@ -63,8 +63,6 @@ users = {
 }
 ```
 
-
-
 ## Testing
 
 Tested with Terraform version 15.5 and the following providers:
@@ -116,4 +114,3 @@ To remove all Snowflake and AWS assets created by this script run the following 
 ```bash
 terraform destroy
 ```
-
