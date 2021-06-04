@@ -38,3 +38,4 @@ provider.tf
 
 python/test_data_creation/snowflake_test_table_data.csv
 python/test_data_creation/snowflake_test_table_data.json
+python/test_data_creation/snowflake_test_table_data.parquet
