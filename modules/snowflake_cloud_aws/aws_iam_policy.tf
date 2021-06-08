@@ -1,7 +1,7 @@
 resource "aws_iam_policy" "snowflake_user" {
   name        = "snowflake_user_s3_policy"
   description = "Policy to allow the user to access the Snowflake S3 bucket"
-  tags        = module.aws_user_tags.tags
+  tags        = var.tags
   policy = jsonencode(
     {
       "Version" : "2012-10-17",
@@ -16,13 +16,13 @@ resource "aws_iam_policy" "snowflake_user" {
             "s3:DeleteObjectVersion"
           ],
           "Resource" : [
-            "arn:aws:s3:::${local.snowflake_s3_bucket_name}/*"
+            "arn:aws:s3:::${var.snowflake_s3_bucket_name}/*"
           ]
         },
         {
           "Effect" : "Allow",
           "Action" : "s3:ListBucket",
-          "Resource" : "arn:aws:s3:::${local.snowflake_s3_bucket_name}"
+          "Resource" : "arn:aws:s3:::${var.snowflake_s3_bucket_name}"
         }
       ]
     }
