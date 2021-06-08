@@ -135,6 +135,14 @@ role_grants = {
       "terraform_test_user_3"
     ]
   }
+  "ACCOUNTADMIN" = {
+    roles = [
+      "test_role_loader",
+      "test_role_transformer",
+      "test_role_reports"
+    ]
+    users = []
+  }
   "test_role_transformer" = {
     roles = []
     users = [

@@ -55,10 +55,10 @@ output "database_grant_id" {
   sensitive = false
 }
 
-output "role_grants_id" {
-  value     = module.snowflake_cloud_role_grants.id
-  sensitive = false
-}
+# output "role_grants_id" {
+#   value     = module.snowflake_cloud_role_grants.id
+#   sensitive = false
+# }
 
 output "table_id" {
   value     = module.snowflake_cloud_table.id
