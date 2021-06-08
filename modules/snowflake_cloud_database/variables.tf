@@ -4,3 +4,9 @@ variable "database" {
   default     = {}
   sensitive   = false
 }
+
+variable "snowflake_region" {
+  type        = string
+  description = "Snowflake acccount region"
+  sensitive   = false
+}

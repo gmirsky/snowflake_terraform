@@ -1,7 +1,17 @@
-module "snowflake_cloud_database" {
-  source   = "./modules/snowflake_cloud_database"
-  database = var.database
-}
+
+
+# module "snowflake_cloud_database_grant" {
+#   source         = "./modules/snowflake_cloud_database_grant"
+#   database_grant = var.database_grant
+#   depends_on = [
+#     module.snowflake_cloud_database,
+#     module.snowflake_cloud_role
+#   ]
+# }
+
+
+
+
 
 # module "snowflake_cloud_warehouse" {
 #   source                 = "./modules/snowflake_cloud_warehouse"
@@ -51,14 +61,7 @@ module "snowflake_cloud_database" {
 #   ]
 # }
 
-# module "snowflake_cloud_database_grant" {
-#   source         = "./modules/snowflake_cloud_database_grant"
-#   database_grant = var.database_grant
-#   depends_on = [
-#     module.snowflake_cloud_database,
-#     module.snowflake_cloud_role
-#   ]
-# }
+
 
 # # module "snowflake_cloud_role_grants" {
 # #   source      = "./modules/snowflake_cloud_role_grants"
