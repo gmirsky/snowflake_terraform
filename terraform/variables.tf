@@ -79,14 +79,18 @@ variable "table_grant" {
 variable "stage_database" {
   type        = string
   description = "Snowflake stage database"
-  default     = ""
   sensitive   = false
 }
 
 variable "stage_schema" {
   type        = string
   description = "Snowflake stage schema"
-  default     = ""
+  sensitive   = false
+}
+
+variable "stage_roles" {
+  type        = list(string)
+  description = "Snowflake stage roles"
   sensitive   = false
 }
 
@@ -119,4 +123,16 @@ variable "snowflake_password" {
   type        = string
   description = "Snowflake user password"
   sensitive   = true
+}
+
+variable "pipe" {
+  type        = map(any)
+  description = "Pipe map used by the for_each loop in snowflake_cloud_pipe module"
+  default     = {}
+  sensitive   = false
+}
+
+variable "filter_prefix" {
+  type        = string
+  description = "S3 bucket notification filter prefix (filter_prefix value must be the prefix in s3_bucket_folder_name)"
 }

@@ -1,7 +1,8 @@
-# resource "snowflake_stage_grant" "grant_example_stage" {
-#   database_name = snowflake_stage.example_stage.database
-#   schema_name   = snowflake_stage.example_stage.schema
-#   roles         = ["LOADER"]
-#   privilege     = "OWNERSHIP"
-#   stage_name    = snowflake_stage.example_stage.name
-# }
+resource "snowflake_stage_grant" "stage_grant" {
+  for_each      = var.stage_name
+  database_name = var.database_name
+  schema_name   = var.schema_name
+  roles         = var.roles
+  privilege     = var.privilege
+  stage_name    = each.value
+}

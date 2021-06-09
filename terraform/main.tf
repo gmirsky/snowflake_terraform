@@ -75,3 +75,21 @@ module "snowflake_cloud_stage" {
     module.snowflake_cloud_aws,
   ]
 }
+
+module "snowflake_cloud_stage_grant" {
+  source        = "../modules/snowflake_cloud_stage_grant"
+  database_name = var.stage_database
+  schema_name   = var.stage_schema
+  roles         = var.stage_roles
+  privilege     = "USAGE"
+  stage_name    = module.snowflake_cloud_stage.name
+}
+
+module "snowflake_cloud_pipe" {
+  source = "../modules/snowflake_cloud_pipe"
+  pipe   = var.pipe
+  depends_on = [
+    module.snowflake_cloud_stage,
+    module.snowflake_cloud_stage_grant
+  ]
+}

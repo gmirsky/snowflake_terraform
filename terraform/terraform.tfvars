@@ -3,6 +3,11 @@ snowflake_role        = "SYSADMIN"
 snowflake_region      = "us-east-1"
 stage_database        = "test_database_1"
 stage_schema          = "raw"
+stage_roles = [
+  "SYSADMIN",
+  "ACCOUNTADMIN",
+  "PUBLIC"
+]
 custom_tags = {
   Project     = "Snowflake"
   Role        = "Snowflake cloud evaluation and testing"
@@ -12,6 +17,8 @@ custom_tags = {
   Ledger-Code = "123456"
 }
 
+# filter_prefix value must be the prefix in s3_bucket_folder_name
+filter_prefix = "snowflake_test_data"
 s3_bucket_folder_name = [
   "snowflake_test_data/csv/",
   "snowflake_test_data/json/",
@@ -303,5 +310,38 @@ table_grant = {
     shares            = []
     on_future         = false
     with_grant_option = false
+  }
+}
+#
+# Due to the lack of data resources in the Snowflake Terraform provider this
+# part needs to be "fudged" to get it to work without really kludgy data
+# gymnastics.
+#
+# pipe must be database.schema.table_name (fully qualified table name) format!
+pipe = {
+  "test_database_1.raw.snowflake_test_table_csv" = {
+    stage_name       = "snowflake_test_data_csv"
+    auto_ingest      = true
+    file_format_type = "CSV"
+  }
+  "test_database_1.raw.snowflake_test_table_json" = {
+    stage_name       = "snowflake_test_data_json"
+    auto_ingest      = true
+    file_format_type = "JSON"
+  }
+  "test_database_1.raw.snowflake_test_table_avro" = {
+    stage_name       = "snowflake_test_data_avro"
+    auto_ingest      = true
+    file_format_type = "AVRO"
+  }
+  "test_database_1.raw.snowflake_test_table_parquet" = {
+    stage_name       = "snowflake_test_data_parquet"
+    auto_ingest      = true
+    file_format_type = "PARQUET"
+  }
+  "test_database_1.raw.snowflake_test_table_xml" = {
+    stage_name       = "snowflake_test_data_xml"
+    auto_ingest      = true
+    file_format_type = "XML"
   }
 }

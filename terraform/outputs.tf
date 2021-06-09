@@ -75,3 +75,18 @@ output "snowflake_cloud_stage_url" {
   value = module.snowflake_cloud_stage.url
 }
 
+output "snowflake_cloud_stage_grant_id" {
+  value = module.snowflake_cloud_stage_grant.id
+}
+
+output "snowflake_cloud_pipe_id" {
+  value = module.snowflake_cloud_pipe.id
+}
+
+output "snowflake_cloud_pipe_sqs_notification_channel" {
+  value = module.snowflake_cloud_pipe.sqs_notification_channel
+}
+
+output "snowflake_cloud_pipe_owner" {
+  value = module.snowflake_cloud_pipe.pipe_owner
+}
