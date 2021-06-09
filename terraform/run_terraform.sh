@@ -28,6 +28,6 @@ if ! terraform plan -out=tfplan -var-file=terraform.tfvars -var-file=snowflake.t
     exit
 fi
 #
-terraform apply tfplan
+#terraform apply tfplan
 #
 # terraform destroy -var-file=terraform.tfvars -var-file=snowflake.tfvars

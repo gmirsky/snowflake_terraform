@@ -76,6 +76,20 @@ variable "table_grant" {
   sensitive   = false
 }
 
+variable "stage_database" {
+  type        = string
+  description = "Snowflake stage database"
+  default     = ""
+  sensitive   = false
+}
+
+variable "stage_schema" {
+  type        = string
+  description = "Snowflake stage schema"
+  default     = ""
+  sensitive   = false
+}
+
 variable "snowflake_region" {
   type        = string
   description = "Snowflake acccount region"

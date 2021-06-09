@@ -1,6 +1,8 @@
 environment_namespace = "demo"
 snowflake_role        = "SYSADMIN"
 snowflake_region      = "us-east-1"
+stage_database        = "test_database_1"
+stage_schema          = "raw"
 custom_tags = {
   Project     = "Snowflake"
   Role        = "Snowflake cloud evaluation and testing"

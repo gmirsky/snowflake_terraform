@@ -63,15 +63,15 @@ module "snowflake_cloud_table_grant" {
   ]
 }
 
-# module "snowflake_cloud_stage" {
-#   source            = "./modules/snowflake_cloud_stage"
-#   stage_s3_urls     = local.stage_s3_urls
-#   stage_database    = var.stage_database
-#   stage_schema      = var.stage_schema
-#   stage_credentials = local.snowflake_s3_user_credentials
-#   depends_on = [
-#     module.snowflake_cloud_database,
-#     module.snowflake_cloud_schema,
-#     module.snowflake_cloud_aws,
-#   ]
-# }
+module "snowflake_cloud_stage" {
+  source            = "../modules/snowflake_cloud_stage"
+  stage_s3_urls     = local.stage_s3_urls
+  stage_database    = var.stage_database
+  stage_schema      = var.stage_schema
+  stage_credentials = local.snowflake_s3_user_credentials
+  depends_on = [
+    module.snowflake_cloud_database,
+    module.snowflake_cloud_schema,
+    module.snowflake_cloud_aws,
+  ]
+}

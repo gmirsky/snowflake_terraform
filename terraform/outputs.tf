@@ -33,6 +33,16 @@ output "s3_bucket_id" {
   sensitive = false
 }
 
+output "s3_bucket_object_id" {
+  value     = module.snowflake_cloud_aws.bucket_object_id
+  sensitive = false
+}
+
+output "s3_bucket_object_urls" {
+  value     = module.snowflake_cloud_aws.bucket_object_urls
+  sensitive = false
+}
+
 output "snowflake_cloud_database_id" {
   value = module.snowflake_cloud_database.id
 }
@@ -52,3 +62,16 @@ output "snowflake_cloud_schema_grant_id" {
 output "snowflake_cloud_table_id" {
   value = module.snowflake_cloud_table.id
 }
+
+output "snowflake_cloud_stage_id" {
+  value = module.snowflake_cloud_stage.id
+}
+
+output "snowflake_cloud_stage_name" {
+  value = module.snowflake_cloud_stage.name
+}
+
+output "snowflake_cloud_stage_url" {
+  value = module.snowflake_cloud_stage.url
+}
+
