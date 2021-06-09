@@ -27,3 +27,28 @@ output "s3_bucket_arn" {
   value     = module.snowflake_cloud_aws.s3_bucket_arn
   sensitive = false
 }
+
+output "s3_bucket_id" {
+  value     = module.snowflake_cloud_aws.s3_bucket_id
+  sensitive = false
+}
+
+output "snowflake_cloud_database_id" {
+  value = module.snowflake_cloud_database.id
+}
+
+output "snowflake_cloud_database_grant_id" {
+  value = module.snowflake_cloud_database_grant.id
+}
+
+output "snowflake_cloud_schema_id" {
+  value = module.snowflake_cloud_schema.id
+}
+
+output "snowflake_cloud_schema_grant_id" {
+  value = module.snowflake_cloud_schema_grant.id
+}
+
+output "snowflake_cloud_table_id" {
+  value = module.snowflake_cloud_table.id
+}

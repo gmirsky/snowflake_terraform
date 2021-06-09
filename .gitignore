@@ -34,14 +34,11 @@ notes.txt
 
 .terraform.lock.hcl
 
-provider.tf
+snowflake.tfvars
 
 python/test_data_creation/snowflake_test_table_data.csv
 python/test_data_creation/snowflake_test_table_data.json
 python/test_data_creation/snowflake_test_table_data.parquet
 
 Zarchive
-
-run_snowflake_sysadmin_1.sh
-/Users/gregorymirsky/snowflake_terraform/terraform/snowflake/sysadmin_role/provider.tf
-/Users/gregorymirsky/snowflake_terraform/modules/snowflake_cloud_database/provider.tf
+modules_snowflake.tf
