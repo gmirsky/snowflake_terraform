@@ -67,8 +67,8 @@ users = {
 
 Tested with Terraform version 15.5 and the following providers:
 
-+ provider registry.terraform.io/chanzuckerberg/snowflake v0.25.5
-+ provider registry.terraform.io/hashicorp/aws v3.45.0
++ provider registry.terraform.io/chanzuckerberg/snowflake v0.25.8
++ provider registry.terraform.io/hashicorp/aws v3.46.0
 + provider registry.terraform.io/hashicorp/random v3.1.0
 + provider registry.terraform.io/hashicorp/template v2.2.0
 + provider registry.terraform.io/hashicorp/tls v3.1.0
